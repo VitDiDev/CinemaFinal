@@ -1,4 +1,3 @@
-import axios from "axios"
 import { SET_SYSTEMS_CINEMA } from "../type/QuanLyRapType";
 import { getCinemaSystemList } from "../../../services/Users/QuanLyRapServices";
 

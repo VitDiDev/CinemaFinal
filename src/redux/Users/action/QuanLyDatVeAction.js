@@ -21,11 +21,11 @@ export const getDetailTicketAction = (maLichChieu) => {
     }
 }
 
-export const bookingTicketAction = (thongTinDatVe = new ThongTinDatVe) => {
+export const bookingTicketAction = (thongTinDatVe = new ThongTinDatVe()) => {
     return async (dispatch) => {
         try {
             dispatch(displayLoadingAction)
-            const result = await bookingTicket(thongTinDatVe);
+            await bookingTicket(thongTinDatVe);
             await dispatch(getDetailTicketAction(thongTinDatVe.maLichChieu))
             await dispatch({ type: BOOK_TICKETED })
             await dispatch(hideLoadingAction)

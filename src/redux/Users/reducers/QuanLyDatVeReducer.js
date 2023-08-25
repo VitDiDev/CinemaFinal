@@ -21,7 +21,7 @@ export const QuanLyDatVeReducer = (state = initialState, action) => {
 
             let index = danhSachGheCapNhat.findIndex(gheDD => gheDD.maGhe === action.gheDuocChon.maGhe)
 
-            if (index != -1) {
+            if (Number(index) !== -1) {
                 danhSachGheCapNhat.splice(index, 1)
             } else {
                 danhSachGheCapNhat.push(action.gheDuocChon)

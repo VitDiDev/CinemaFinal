@@ -38,7 +38,7 @@ export const userLoginAction = (loginForm) => {
 export const userRegisAction = (regisForm) => {
     return async (dispatch) => {
         try {
-            let result = await registerService(regisForm);
+            await registerService(regisForm);
             alert('Đăng ký thành công !');
             history.push('/login');
         } catch (errors) {
@@ -69,7 +69,7 @@ export const getInfoUserAction = () => {
 export const updateInfoAction = (formData) => {
     return async (dispatch) => {
         try {
-            let result = await updateUserInfo(formData);
+            await updateUserInfo(formData);
             alert("Cập nhật thành công, vui lòng đăng nhập lại !");
             history.push('/login')
             localStorage.removeItem(USERLOGIN);

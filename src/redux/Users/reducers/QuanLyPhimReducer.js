@@ -2,22 +2,15 @@ import {GET_FILMLIST, SET_FILM_COMING_SOON, SET_FILM_FILTER, SET_FILM_SHOWING} f
 import { SET_DETAIL_FILM } from "../type/QuanLyRapType";
 
 export const FilmState = {
-    NOT_FILTER: 'NOT_FILTER',
+    TAT_CA: 'TAT_CA',
     DANG_CHIEU: 'DANG_CHIEU',
     SAP_CHIEU: 'SAP_CHIEU',
 }
 
 const initialState = {
-    arrFilm: [
-
-    ],
+    arrFilm: [],
     dangChieu: true,
     sapChieu: true,
-    filter: {
-        dangChieu: false,
-        sapChieu: false,
-    },
-    filmState: FilmState.NOT_FILTER,
     arrFilmDefault: [],
     filmDetail: {}
 }
@@ -44,9 +37,7 @@ export const QuanLyPhimReducer = (state = initialState, action) => {
         }
 
         case SET_FILM_FILTER: {
-            state.filmState = action.payload;
-
-            switch (state.filmState) {
+            switch (action.payload) {
                 case FilmState.SAP_CHIEU: {
                     state.arrFilm = state.arrFilmDefault.filter(t => t.sapChieu);
                     break;
@@ -59,6 +50,8 @@ export const QuanLyPhimReducer = (state = initialState, action) => {
                     state.arrFilm = state.arrFilmDefault
                 }
             }
+
+            return { ...state }
         }
 
         case SET_DETAIL_FILM: {

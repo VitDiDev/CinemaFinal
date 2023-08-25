@@ -4,7 +4,7 @@ import { updateFilmInfo } from "../../../services/Admins/ManagerFilms"
 export const updateFilmInfoAction = (formData) => {
     return async () => {
         try {
-            const result = await updateFilmInfo(formData);
+            await updateFilmInfo(formData);
             alert('Cập nhật thành công !');
             history.push('/admin/films');
         } catch (errors) {

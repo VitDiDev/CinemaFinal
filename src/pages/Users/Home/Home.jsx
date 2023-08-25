@@ -8,7 +8,6 @@ import {getCinemaSystemListAction} from "../../../redux/Users/action/QuanLyRapAc
 import BackToTop from '../../../components/BackTop/BackToTop';
 
 export default function Home(props) {
-
     const { arrFilm } = useSelector((state) => state.QuanLyPhimReducer);
     const { arrSystemsCinema } = useSelector((state) => state.QuanLyRapReducer)
     const dispatch = useDispatch();
