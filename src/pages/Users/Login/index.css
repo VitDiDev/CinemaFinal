@@ -1,0 +1,14 @@
+.login__content .content__form {
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    padding: 10px 20px;
+    margin-top: 50px;
+}
+
+.home__link {
+    color: black;
+}
+
+.home__link:hover {
+    color: red;
+}
